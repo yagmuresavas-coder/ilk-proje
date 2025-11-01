@@ -12,7 +12,7 @@ else:
         print("Kullanıcı Adı Geçerli")
         sifre=input("Şifre Giriniz:")
         if len(sifre)<6:
-            print("Şifre En Az 6 Karkter Olmalı")
+            print("Şifre En Az 6 Karakter Olmalı")
         else:
             sifre_ilk_harf=sifre[0]
             sifre_son_harf=sifre[-1]
@@ -22,4 +22,5 @@ else:
                 if sifre in '@':
                     print ("Şifreniz Geçerli")
                 else:
+
                     print("Şifreniz Geçersiz @ karakteri içermelidir.")
