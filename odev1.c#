@@ -1,0 +1,50 @@
+using System.ComponentModel.DataAnnotations;
+
+Console.WriteLine("Kullanıcı Adı Giriniz:");
+var kullaniciAdı = Console.ReadLine();
+if (kullaniciAdı.Length <5 || string.IsNullOrEmpty(kullaniciAdı)) 
+{
+    Console.WriteLine("Kullanıcı adı 5 karakterden fazla olmalıdır ve kullanıcı adı kısmını boş bırakmayınız");
+}
+else
+{
+    char ilk_harf;
+    ilk_harf = kullaniciAdı[0];
+    if (ilk_harf == '?' && ilk_harf == '*' && ilk_harf == '!' && ilk_harf == ',')
+    {
+        Console.WriteLine("Kullanıcı adı özel karakterle başlaymaz");
+    }
+    else 
+    {
+        Console.WriteLine("Kullanıcı adı geçerlidir devam ediniz");
+        Console.WriteLine(" Şifre Giriniz:");
+        var sifre = Console.ReadLine();
+        if (sifre.Length < 6|| string.IsNullOrEmpty(sifre))
+        {
+            Console.WriteLine("Şifre 6 karakterden fazla olmalıdır ve şifre kısmını boş bırakmayınız");
+        }
+        else 
+        {
+            char sifre_ilk_karakter;
+            char sifre_son_karakter;
+            sifre_ilk_karakter = sifre[0];
+            sifre_son_karakter = sifre[-1];
+            if (sifre_ilk_karakter == sifre_son_karakter)
+            {
+                Console.WriteLine("Şifrenin ilk ve son karakteri aynı olamaz");
+            }
+            else 
+            {
+                if (sifre.Contains('@'))
+                {
+                    Console.WriteLine("Şifreniz Geçerlidir");
+                }
+                else 
+                {
+                    Console.WriteLine("ŞİFRENİZ @ KARAKTERİNİ İÇERMELİDİR");
+                }
+            }
+        }
+    }
+      
+}
