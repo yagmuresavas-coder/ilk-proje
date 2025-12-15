@@ -1,0 +1,73 @@
+namespace terminaldeyilmasiagaci
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int yukseklik = 15;
+            Random zar = new Random();
+            for (int i = 0; i < yukseklik; i++)
+            {
+                for (int k = 0; k < (yukseklik-i); k++)
+                {
+                    Console.Write(" ");
+                }
+                for (int x = 0; x < i; x++)
+                {
+                    if (i == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        int sans = zar.Next(1, 100);
+                        if (sans<10)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write(" o");
+                        }
+                        else if (sans>10 &&sans<20)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.Write(" o");
+                        }
+                        else if (sans > 20 && sans < 30)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Magenta;
+                            Console.Write(" *");
+                        }
+                        else if (sans > 30 && sans < 40)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.Write(" *");
+                        }
+                        else if (sans > 40 && sans < 50)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.Write(" *");
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            Console.Write(" *");
+                        }
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.ForegroundColor= ConsoleColor.DarkYellow;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int k = 0; k <yukseklik-2; k++)
+                {
+                    Console.Write(" ");
+                }
+                Console.WriteLine("|_-| ");
+            }
+         Console.ResetColor();
+            Console.Read();
+        }
+     
+    }
+}
